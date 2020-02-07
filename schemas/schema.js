@@ -1,5 +1,5 @@
-const graphql = require('graphql')
-const { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt } = graphql
+const graphql = require('graphql');
+const {GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt} = graphql;
 
 const posts = [
     {
@@ -26,7 +26,7 @@ const authors = {
 };
 
 
-const authorType =  new GraphQLObjectType({
+const authorType = new GraphQLObjectType({
     name: 'Author',
     fields: {
         name: {
@@ -38,7 +38,7 @@ const authorType =  new GraphQLObjectType({
     }
 });
 
-const postType =  new GraphQLObjectType({
+const postType = new GraphQLObjectType({
     name: 'Post',
     fields: {
         title: {
@@ -56,13 +56,13 @@ const postType =  new GraphQLObjectType({
     }
 });
 
-const queryType =  new GraphQLObjectType({
+const queryType = new GraphQLObjectType({
     name: 'Query',
     fields: {
         post: {
             type: postType,
             args: {
-                id: { type: GraphQLInt }
+                id: {type: GraphQLInt}
             },
             resolve: (source, {id}) => {
                 return posts[id]
