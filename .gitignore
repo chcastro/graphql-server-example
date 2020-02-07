@@ -1,2 +1,10 @@
 # Project exclude paths
 /node_modules/
+
+### IntelliJ IDEA ###
+*.iws
+*.iml
+*.ipr
+out/
+/package-lock.json
+/.idea/
